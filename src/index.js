@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // import './index.css';
 // import App from './App';
+import 'jquery'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './components/Home';
 import Menu from './components/Menu';
 import Main from './components/Main';
@@ -33,7 +35,7 @@ ReactDOM.render(
       </Switch>
     </div>
   </BrowserRouter>,
-  document.getElementById('body-container')
+  document.getElementById('root')
 );
 
 ReactDOM.render(

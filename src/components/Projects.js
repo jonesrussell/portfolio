@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Badge } from 'reactstrap';
 import Lightbox from 'react-image-lightbox';
-import './Projects.scss';
+import styles from './Projects.scss';
 
 class Projects extends Component {
   constructor(props) {
@@ -74,7 +74,7 @@ class Projects extends Component {
     return typeof demo[0] !== 'undefined' ? (
       <div className='demo'>
         <strong>Demo:</strong>
-        <a href={demo[0].uri} target='_blank'>
+        <a href={demo[0].uri} target='_blank' rel="noopener noreferrer">
           {demo[0].uri}
         </a>
       </div>
@@ -90,7 +90,7 @@ class Projects extends Component {
         {
           // eslint-disable-next-line
         }{' '}
-        <a href={github[0].uri} target='_blank'>
+        <a href={github[0].uri} target='_blank' rel='noopener noreferrer'>
           <i className='fa fa-github-square fa-3x' aria-hidden='true'></i>
         </a>
       </div>
@@ -128,8 +128,11 @@ class Projects extends Component {
     let _this = this;
     let images = [];
 
+    const css = styles;  //storing styles in const
+
     return (
       <div id='page-projects'>
+        <style>{css}</style>
         <h1>{this.state.title}</h1>
         <hr />
         <div id='projects-page-body'>{this.state.body}</div>

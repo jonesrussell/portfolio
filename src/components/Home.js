@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Home.scss';
 
 class Home extends Component {
 	constructor() {
@@ -26,8 +27,6 @@ class Home extends Component {
 	}
 
 	render() {
-		import('./Home.scss');
-
 		return (
 			<div id="page-home" style={{ textAlign: 'center' }}>
 				<div dangerouslySetInnerHTML={{__html: this.state.body}} />
