@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // import './index.css';
 // import App from './App';
 import 'jquery'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.scss';
 import Home from './components/Home';
 import Menu from './components/Menu';
 import Main from './components/Main';
@@ -40,7 +40,7 @@ ReactDOM.render(
 
 ReactDOM.render(
   <div>
-    <Favicon url='https://minio.russelljones.ca/portfolio/drupal/undraw_about_me_wa29.svg' />
+    <Favicon url='http://localhost:13002/portfolio/drupal/undraw_about_me_wa29.svg' />
   </div>,
   document.getElementById('fav')
 );
