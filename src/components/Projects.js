@@ -1,7 +1,8 @@
+// @flow
 import React, { Component } from 'react';
 import { Badge } from 'reactstrap';
 import Lightbox from 'react-image-lightbox';
-import styles from './Projects.scss';
+import './Projects.scss';
 
 class Projects extends Component {
   constructor(props) {
@@ -50,7 +51,8 @@ class Projects extends Component {
   showImage(image, i) {
     let _this = this;
     // TODO: imgUrl should not need adjustment
-    let imgUrl = image[0].url.replace('http://localhost', 'http://192.168.0.25');
+    // let imgUrl = image[0].url.replace('http://localhost', 'http://192.168.0.25');let imgUrl = image[0].url.replace('http://localhost', 'http://192.168.0.25');
+    const imgUrl = image[0].url;
 
     return (
       <img
@@ -101,14 +103,15 @@ class Projects extends Component {
 
   showProject(project, images) {
     // TODO: imgUrl should not need adjustment
-    let imgUrl = project.field_image[0].url.replace('http://localhost', 'http://192.168.0.25');
+    // let imgUrl = project.field_project_image[0].url.replace('http://localhost', 'http://192.168.0.25');
+    let imgUrl = project.field_project_image[0].url;
     images.push(imgUrl);
 
     return (
       <div key={project.nid[0].value} id='projects'>
         <div className='row project-container'>
           <div className='col col-md-7' style={{ overflow: 'hidden' }}>
-            {this.showImage(project.field_image, images.length - 1)}
+            {this.showImage(project.field_project_image, images.length - 1)}
           </div>
           <div className='col col-md-5'>
             <h3>
@@ -128,21 +131,24 @@ class Projects extends Component {
     let _this = this;
     let images = [];
 
-    const css = styles;  //storing styles in const
+    // const css = styles;  //storing styles in const
 
     return (
-      <div id='page-projects'>
-        <style>{css}</style>
-        <h1>{this.state.title}</h1>
-        <hr />
-        <div id='projects-page-body'>{this.state.body}</div>
-        {this.state.projects.map(function(project) {
-          return _this.showProject(project, images);
-        })}
-        {this.state.isOpen && (
-          <Lightbox mainSrc={images[this.state.photoIndex]} onCloseRequest={() => _this.setState({ isOpen: false })} />
-        )}
-      </div>
+        <div id='page-projects'>
+          <h1>{this.state.title}</h1>
+          <hr />
+          <div id='projects-page-body'>{this.state.body}</div>
+        {this.state.projects.map(function (project) {
+            console.log(project);
+            return _this.showProject(project, images);
+          })}
+          {this.state.isOpen && (
+            <Lightbox
+              mainSrc={images[this.state.photoIndex]}
+              onCloseRequest={() => _this.setState({ isOpen: false })}
+            />
+          )}
+        </div>
     );
   }
 }
