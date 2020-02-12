@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import * as Sentry from '@sentry/browser';
+import LogRocket from 'logrocket';
+import setupLogRocketReact from 'logrocket-react';
 // import App from './App';
 import 'jquery'
 import './scss/App.scss';
@@ -10,12 +13,17 @@ import Main from './components/Main';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import * as serviceWorker from './serviceWorker';
-import LogRocket from 'logrocket';
-import setupLogRocketReact from 'logrocket-react';
 import WebFont from 'webfontloader';
+
+Sentry.init({ dsn: 'https://217dffaf7a7647debcd1aec25f9efdd1@sentry.io/1422453' });
 
 LogRocket.init('herbig-haro/portfolio');
 setupLogRocketReact(LogRocket);
+LogRocket.getSessionURL(sessionURL => {
+  Sentry.configureScope(scope => {
+    scope.setExtra('sessionURL', sessionURL);
+  });
+});
 
 WebFont.load({
   google: {
