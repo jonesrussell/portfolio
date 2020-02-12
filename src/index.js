@@ -10,7 +10,12 @@ import Main from './components/Main';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import * as serviceWorker from './serviceWorker';
+import LogRocket from 'logrocket';
+import setupLogRocketReact from 'logrocket-react';
 import WebFont from 'webfontloader';
+
+LogRocket.init('herbig-haro/portfolio');
+setupLogRocketReact(LogRocket);
 
 WebFont.load({
   google: {

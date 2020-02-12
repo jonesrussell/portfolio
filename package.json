@@ -11,6 +11,8 @@
     "flow-bin": "^0.118.0",
     "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
+    "logrocket": "^1.0.6",
+    "logrocket-react": "^4.0.1",
     "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
