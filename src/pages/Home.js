@@ -11,7 +11,9 @@ class Home extends Component {
 		}
 	}
 
-	componentDidMount () {
+  componentDidMount () {
+    document.body.id = 'homepage';
+
 		fetch(process.env.REACT_APP_API_URL + '/node/2?_format=json')
       .then(results => {
         return results.json();

@@ -2,7 +2,6 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import About from '../pages/About'
 import Projects from '../pages/Projects'
-import './Main.scss'
 
 // The Main component renders one of the three provided
 // Routes (provided that one matches). Both the /about

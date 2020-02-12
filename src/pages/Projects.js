@@ -50,14 +50,12 @@ class Projects extends Component {
 
   showImage(image, i) {
     let _this = this;
-    // TODO: imgUrl should not need adjustment
-    // let imgUrl = image[0].url.replace('http://localhost', 'http://192.168.0.25');let imgUrl = image[0].url.replace('http://localhost', 'http://192.168.0.25');
-    const imgUrl = image[0].url;
+    const img = image[0];
 
     return (
       <img
-        src={imgUrl}
-        alt={image[0].alt}
+        src={img.url}
+        alt={img.alt}
         onClick={function() {
           _this.setState({
             photoIndex: i,
