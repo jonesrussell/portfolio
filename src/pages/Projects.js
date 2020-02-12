@@ -4,7 +4,7 @@ import { Badge } from 'reactstrap';
 import Lightbox from 'react-image-lightbox';
 import '../scss/Projects.scss';
 
-class Projects extends Component {
+class Projects extends Component<Props> {
   constructor(props) {
     super(props);
 
@@ -128,25 +128,29 @@ class Projects extends Component {
   render() {
     let _this = this;
     let images = [];
+    const state = this.state;
 
     // const css = styles;  //storing styles in const
 
     return (
-        <div id='page-projects'>
-          <h1>{this.state.title}</h1>
-          <hr />
-          <div id='projects-page-body'>{this.state.body}</div>
-        {this.state.projects.map(function (project) {
-            console.log(project);
+      <div id='page-projects'>
+        <h1>{state.title}</h1>
+        <hr />
+        <div id='projects-page-body'>{state.body}</div>
+        {
+          state.projects.map((project) => {
             return _this.showProject(project, images);
-          })}
-          {this.state.isOpen && (
+          })
+        }
+        {
+          state.isOpen && (
             <Lightbox
-              mainSrc={images[this.state.photoIndex]}
+              mainSrc={images[state.photoIndex]}
               onCloseRequest={() => _this.setState({ isOpen: false })}
             />
-          )}
-        </div>
+          )
+        }
+      </div>
     );
   }
 }

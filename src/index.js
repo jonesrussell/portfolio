@@ -9,7 +9,6 @@ import Menu from './components/Menu';
 import Main from './components/Main';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import Favicon from 'react-favicon';
 import * as serviceWorker from './serviceWorker';
 import WebFont from 'webfontloader';
 
@@ -42,13 +41,6 @@ ReactDOM.render(
     </div>
   </BrowserRouter>,
   document.getElementById('root')
-);
-
-ReactDOM.render(
-  <div>
-    <Favicon url='http://localhost:13002/portfolio/drupal/undraw_about_me_wa29.svg' />
-  </div>,
-  document.getElementById('fav')
 );
 
 // If you want your app to work offline and load faster, you can change
