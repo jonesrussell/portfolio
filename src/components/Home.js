@@ -29,7 +29,6 @@ class Home extends Component {
 	render () {
 		return (
       <React.Fragment>
-        {styles}
         <div id='page-home' style={{ textAlign: 'center' }}>
           <div dangerouslySetInnerHTML={{ __html: this.state.body }} />
         </div>
