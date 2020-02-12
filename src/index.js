@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-snapshot';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // import App from './App';
 import 'jquery'
@@ -19,9 +19,9 @@ WebFont.load({
   },
 });
 
-// ReactDOM.render(<App />, document.getElementById('root'));
+// render(<App />, document.getElementById('root'));
 
-ReactDOM.render(
+render(
   <BrowserRouter>
     <div>
       <Switch>
@@ -44,7 +44,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-ReactDOM.render(
+render(
   <div>
     <Favicon url='http://localhost:13002/portfolio/drupal/undraw_about_me_wa29.svg' />
   </div>,
