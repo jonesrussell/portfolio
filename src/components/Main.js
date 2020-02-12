@@ -10,7 +10,7 @@ import './Main.scss'
 // with /roster or /schedule. The / route will only match
 // when the pathname is exactly the string "/"
 const Main = () => (
-  <main>
+  <main id="main-content">
     <Switch>
       <Route path='/about' component={About}/>
       <Route path='/projects' component={Projects}/>
