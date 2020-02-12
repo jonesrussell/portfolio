@@ -2,11 +2,13 @@
 import React, { Component } from 'react';
 import { Badge } from 'reactstrap';
 import Lightbox from 'react-image-lightbox';
+import PropTypes from 'prop-types';
 import '../scss/Projects.scss';
 
-class Projects extends Component<Props> {
-  constructor(props) {
-    super(props);
+class Projects extends Component {
+  // constructor(props) {
+  constructor() {
+    // super(props);
 
     this.state = {
       title: '',
@@ -74,7 +76,7 @@ class Projects extends Component<Props> {
     return typeof demo[0] !== 'undefined' ? (
       <div className='demo'>
         <strong>Demo:</strong>
-        <a href={demo[0].uri} target='_blank' rel="noopener noreferrer">
+        <a href={demo[0].uri} target='_blank' rel='noopener noreferrer'>
           {demo[0].uri}
         </a>
       </div>
@@ -137,22 +139,19 @@ class Projects extends Component<Props> {
         <h1>{state.title}</h1>
         <hr />
         <div id='projects-page-body'>{state.body}</div>
-        {
-          state.projects.map((project) => {
-            return _this.showProject(project, images);
-          })
-        }
-        {
-          state.isOpen && (
-            <Lightbox
-              mainSrc={images[state.photoIndex]}
-              onCloseRequest={() => _this.setState({ isOpen: false })}
-            />
-          )
-        }
+        {state.projects.map(project => {
+          return _this.showProject(project, images);
+        })}
+        {state.isOpen && (
+          <Lightbox mainSrc={images[state.photoIndex]} onCloseRequest={() => _this.setState({ isOpen: false })} />
+        )}
       </div>
     );
   }
 }
+
+Projects.propTypes = {
+
+};
 
 export default Projects;
