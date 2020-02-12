@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Badge } from 'reactstrap';
 import Lightbox from 'react-image-lightbox';
-import './Projects.scss';
+import '../scss/Projects.scss';
 
 class Projects extends Component {
   constructor(props) {
