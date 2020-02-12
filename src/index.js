@@ -11,6 +11,13 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Favicon from 'react-favicon';
 import * as serviceWorker from './serviceWorker';
+import WebFont from 'webfontloader';
+
+WebFont.load({
+  google: {
+    families: ['Raleway', 'Roboto', 'sans-serif'],
+  },
+});
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 
