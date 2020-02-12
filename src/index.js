@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // import App from './App';
 import 'jquery'
-import './App.scss';
-import Home from './components/Home';
+import './scss/App.scss';
+import Home from './pages/Home';
 import Menu from './components/Menu';
 import Main from './components/Main';
 import Contact from './components/Contact';
