@@ -15,7 +15,7 @@ import Footer from './components/Footer';
 import * as serviceWorker from './serviceWorker';
 import WebFont from 'webfontloader';
 
-Sentry.init({ dsn: 'https://217dffaf7a7647debcd1aec25f9efdd1@sentry.io/1422453' });
+Sentry.init({ dsn: 'https://bf4a6ec181514906aa622b40b170759c@sentry.io/2476789' });
 
 LogRocket.init('herbig-haro/portfolio');
 setupLogRocketReact(LogRocket);
